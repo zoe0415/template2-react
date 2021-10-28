@@ -14,7 +14,6 @@ module.exports = {
         DEFAULT: "#ffffff",
       },
       black: {
-        // opacity70:"",
         text: "#212529",
         DEFAULT: "#111111",
       },

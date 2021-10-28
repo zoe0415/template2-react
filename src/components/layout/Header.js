@@ -6,7 +6,6 @@ function Header() {
   const [isShowMenu, setIsShowMenu] = useState(false)
   const handleIsDarkMode = () => {
     setIsDark(!isDark)
-    console.log(isDark)
   }
   const handleShowMenu = (e) => {
     e.preventDefault()
@@ -18,7 +17,7 @@ function Header() {
       <ul
         className={
           isShowMenu
-            ? "fixed left-0 w-1/5 h-full pt-12 pl-8 bg-gray-light2 shadow-2xl z-30 duration-700"
+            ? "fixed left-0 w-1/5 h-full pt-12 pl-8 bg-gray-light2 shadow-2xl z-30 overflow-y-auto duration-700"
             : "fixed -left-1/4 w-1/5 h-full pt-12 pl-8 bg-gray-light2 shadow-2xl z-30 overflow-hidden duration-700"
         }
       >
@@ -54,7 +53,7 @@ function Header() {
         </li>
         <li>
           <a href="#" className="block my-2 py-2 hover:text-gray duration-150">
-            Contact Form 7
+            Contact
           </a>
         </li>
       </ul>

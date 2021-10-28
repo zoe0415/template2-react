@@ -8,6 +8,7 @@ import Card3 from "../components/Card3"
 import ProductCard from "../components/CardProduct"
 import RightArrow from "../components/slider/RightArrow"
 import LeftArrow from "../components/slider/LeftArrow"
+import Sidebar from "../components/layout/Sidebar"
 
 function Home() {
   const [card1] = useState([
@@ -117,7 +118,9 @@ function Home() {
 
   return (
     <section className="flex">
-      <section className="w-1/5"></section>
+      <section className="w-1/5">
+        <Sidebar></Sidebar>
+      </section>
       <section className="w-4/5">
         <Slider {...settings}>
           {card3.map((item, index) => (
