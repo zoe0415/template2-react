@@ -5,9 +5,14 @@ function ProductCard(props) {
     <section>
       <a href="" className="group">
         <div className="relative rounded-2xl overflow-hidden">
-          <span className="absolute right-0 py-1.5 px-3 z-10 rounded-bl-xl bg-gray text-sm text-white">
-            SALE
-          </span>
+          {props.discount ? (
+            <span className="absolute right-0 py-1.5 px-3 z-10 rounded-bl-xl bg-gray text-sm text-white">
+              SALE
+            </span>
+          ) : (
+            false
+          )}
+
           <img src={`images/${props.img}`} className="group-hover:opacity-80"></img>
         </div>
         <h5 className="group-hover:text-gray my-3 text-center text-xl font-semibold">
