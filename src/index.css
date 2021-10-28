@@ -11,7 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply text-sm text-black-text;
+}
+
+/* 切換鈕 */
+.onoffswitch {
+  @apply relative w-9;
+  -webkit-user-select:none; 
+  -moz-user-select:none; 
+  -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  @apply absolute opacity-0 pointer-events-none;
+}
+.onoffswitch-label {
+  @apply block overflow-hidden cursor-pointer h-5 border-2 border-gray-light bg-gray-light rounded-3xl transition-all duration-200;
+}
+.onoffswitch-label:before {
+  @apply absolute block w-5 bg-white top-0 bottom-0 right-4 border-2 border-gray-light rounded-3xl transition-all duration-200;
+  content: '';
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+  @apply bg-deepOrange;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+  @apply border-deepOrange;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+  @apply right-0;
+}
+

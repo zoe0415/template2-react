@@ -23,7 +23,7 @@ module.exports = {
   plugins: ["react", "prettier", "react-hooks"],
   rules: {
     "prettier/prettier": 1,
-    "react/prop-types": 1,
+    "react/prop-types": 0,
     "linebreak-style": ["error", "unix"],
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
