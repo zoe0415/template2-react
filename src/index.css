@@ -46,3 +46,10 @@ body {
   @apply right-0;
 }
 
+/* common */
+.min-h-calc-w {
+  min-height: calc(100vw / 6);
+}
+.translateY-center {
+  transform: translateY(-50%);
+}

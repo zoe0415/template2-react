@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function Footer() {
   return (
-    <footer className="mt-12 grid grid-cols-4 gap-x-12 p-8 bg-gray-light_2">
+    <footer className="mt-12 grid grid-cols-4 gap-x-12 p-8 bg-gray-light2">
       <section>
         <h5 className="mb-3 text-xl">Our Work is</h5>
         <div className="mb-6">
@@ -17,6 +17,13 @@ function Footer() {
         <h5 className="mb-3 text-xl">Get in touch</h5>
         <div>
           <span className="font-semibold">Phone:</span>+1-202-555-0116
+        </div>
+        <div>
+          <FontAwesomeIcon size="lg" className="mr-3" icon={["fab", "facebook"]} />
+          <FontAwesomeIcon size="lg" className="mr-3" icon={["fab", "twitter"]} />
+          <FontAwesomeIcon size="lg" className="mr-3" icon={["fab", "instagram"]} />
+          <FontAwesomeIcon size="lg" className="mr-3" icon={["fab", "youtube"]} />
+          <FontAwesomeIcon size="lg" icon={["fab", "telegram"]} />
         </div>
       </section>
       <section>

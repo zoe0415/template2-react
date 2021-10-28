@@ -14,26 +14,32 @@ module.exports = {
         DEFAULT: "#ffffff",
       },
       black: {
+        // opacity70:"",
         text: "#212529",
-        opacity30: "rgba(0 ,0 ,0, 0.3)",
         DEFAULT: "#111111",
       },
       gray: {
         light: "#E3E3E3",
-        light_2: "#f8f9fa",
+        light2: "#f8f9fa",
         DEFAULT: "#909090",
       },
       deepOrange: {
         DEFAULT: "#ffab91",
       },
       yellow: {
+        light: "#fff2d1",
         DEFAULT: "#ffc107",
+      },
+      geyser: {
+        DEFAULT: "#d2dae2",
       },
     },
   },
   variants: {
     extend: {
       display: ["dark"],
+      height: ["group-hover"],
+      inset: ["group-hover"],
     },
   },
   plugins: [],

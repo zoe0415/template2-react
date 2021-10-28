@@ -15,6 +15,10 @@ import {
   faTh,
   faStar,
   faStarHalfAlt,
+  faPlus,
+  faArrowRight,
+  faArrowLeft,
+  faArrowUp,
 } from "@fortawesome/free-solid-svg-icons"
 import { faStar as farStar, faCopyright } from "@fortawesome/free-regular-svg-icons"
 library.add(
@@ -26,7 +30,11 @@ library.add(
   faStar,
   faStarHalfAlt,
   farStar,
-  faCopyright
+  faCopyright,
+  faPlus,
+  faArrowRight,
+  faArrowLeft,
+  faArrowUp
 )
 
 // components
@@ -34,13 +42,15 @@ library.add(
 import Header from "./components/layout/Header"
 import Footer from "./components/layout/Footer"
 import Home from "./pages/Home"
+import TopBtn from "./components/layout/TopBtn"
 // import Register from "./pages/Register"
 
 function App() {
   return (
     <main>
-      <section className="px-8">
-        <Header></Header>
+      <Header></Header>
+      <TopBtn></TopBtn>
+      <section className="px-8 pt-28">
         <Route path="/" component={Home} />
       </section>
       <Footer></Footer>
