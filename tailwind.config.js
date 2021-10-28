@@ -40,6 +40,7 @@ module.exports = {
       display: ["dark"],
       height: ["group-hover"],
       inset: ["group-hover"],
+      textColor: ["hover"],
     },
   },
   plugins: [],
