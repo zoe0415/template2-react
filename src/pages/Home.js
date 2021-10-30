@@ -11,6 +11,28 @@ import LeftArrow from "../components/slider/LeftArrow"
 import Sidebar from "../components/layout/Sidebar"
 
 function Home() {
+  const [setting] = useState({
+    infinite: false,
+    speed: 500,
+    slidesToScroll: 1,
+    slidesToShow: 4,
+    nextArrow: <RightArrow />,
+    prevArrow: <LeftArrow />,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  })
   const [card1] = useState([
     {
       title: "111",
@@ -107,22 +129,13 @@ function Home() {
     },
   ])
 
-  const settings = {
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    nextArrow: <RightArrow />,
-    prevArrow: <LeftArrow />,
-  }
-
   return (
     <section className="flex">
-      <section className="w-1/5">
+      <section className="hidden lg:block w-1/5">
         <Sidebar></Sidebar>
       </section>
-      <section className="w-4/5">
-        <Slider {...settings}>
+      <section className="w-full lg:w-4/5">
+        <Slider {...setting}>
           {card3.map((item, index) => (
             <section key={index} className="px-2">
               <Card3 title={item.title} img={item.img}></Card3>
@@ -130,7 +143,7 @@ function Home() {
           ))}
         </Slider>
 
-        <Slider {...settings}>
+        <Slider {...setting}>
           {card1.map((item, index) => (
             <section key={index} className="px-2">
               <Card1 title={item.title} img={item.img}></Card1>
@@ -138,7 +151,7 @@ function Home() {
           ))}
         </Slider>
 
-        <Slider {...settings}>
+        <Slider {...setting}>
           {card2.map((item, index) => (
             <section key={index} className="px-2">
               <Card2
@@ -150,7 +163,7 @@ function Home() {
           ))}
         </Slider>
 
-        <Slider {...settings}>
+        <Slider {...setting}>
           {product.map((item, index) => (
             <section key={index} className="px-2">
               <ProductCard
