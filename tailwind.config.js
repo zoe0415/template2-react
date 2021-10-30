@@ -4,6 +4,15 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class' or false
   theme: {
     extend: {},
+    screens: {
+      sm: "640px",
+      md: "768px",
+      // 'lg': '1024px',
+      // 'xl': '1280px',
+      lg: "990px",
+      xl: "1200px",
+      "2xl": "1536px",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",

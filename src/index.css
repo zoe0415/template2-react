@@ -53,3 +53,6 @@ body {
 .translateY-center {
   transform: translateY(-50%);
 }
+.translateX-center {
+  transform: translateX(-50%);
+}
