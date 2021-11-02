@@ -20,6 +20,8 @@ import {
   faArrowLeft,
   faArrowUp,
   faTimes,
+  faChevronDown,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons"
 import { faStar as farStar, faCopyright } from "@fortawesome/free-regular-svg-icons"
 library.add(
@@ -36,7 +38,9 @@ library.add(
   faArrowRight,
   faArrowLeft,
   faArrowUp,
-  faTimes
+  faTimes,
+  faChevronDown,
+  faBars
 )
 
 // components
