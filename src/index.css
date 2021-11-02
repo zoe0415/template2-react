@@ -53,6 +53,14 @@ body {
 .translateY-center {
   transform: translateY(-50%);
 }
-.translateX-center {
-  transform: translateX(-50%);
+.clamp {
+  @apply overflow-hidden overflow-ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.clamp-2 {
+  -webkit-line-clamp: 2;
+}
+.clamp-3 {
+  -webkit-line-clamp: 3;
 }
