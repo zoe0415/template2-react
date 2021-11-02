@@ -5,11 +5,19 @@ import App from "./App"
 // import reportWebVitals from "./reportWebVitals"
 import { BrowserRouter, Switch } from "react-router-dom"
 
+import { Provider } from "react-redux"
+import { createStore } from "redux"
+import counter from "./reducers"
+const store = createStore(counter)
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Switch>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
+        {/* <App /> */}
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

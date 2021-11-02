@@ -48,6 +48,7 @@ library.add(
 import Header from "./components/layout/Header"
 import Footer from "./components/layout/Footer"
 import Home from "./pages/Home"
+import Blog from "./pages/Blog"
 import TopBtn from "./components/layout/TopBtn"
 // import Register from "./pages/Register"
 
@@ -57,13 +58,11 @@ function App() {
       <Header></Header>
       <TopBtn></TopBtn>
       <section className="px-8 pt-28">
-        <Route path="/" component={Home} />
+        <Route path="/" component={Home} exact />
+        {/* <Route path="/blog/:type?" component={Blog} /> */}
+        <Route path="/blog" component={Blog} />
       </section>
       <Footer></Footer>
-
-      {/* <Route path="/register" component={Register} />
-      <Route path="/books" component={Books} />
-      <Route path="/electronics" component={Electronics} /> */}
     </main>
   )
 }

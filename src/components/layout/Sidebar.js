@@ -1,45 +1,55 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 function Sidebar() {
   // const [isShowSubMenu] = useState({ subMenu: 0, isShow: false })
   const [menuList] = useState([
     {
-      link: "#",
+      link: "/categories",
       title: "Categories",
       subMenu: [
-        { link: "#", title: "Accesories" },
-        { link: "#", title: "Chairs" },
-        { link: "#", title: "Lamps" },
-        { link: "#", title: "Pots & Cups" },
-        { link: "#", title: "Vases" },
-        { link: "#", title: "Tables" },
-        { link: "#", title: "All" },
+        { link: "accesories", title: "Accesories" },
+        { link: "chairs", title: "Chairs" },
+        { link: "lamps", title: "Lamps" },
+        { link: "potsCups", title: "Pots & Cups" },
+        { link: "vases", title: "Vases" },
+        { link: "tables", title: "Tables" },
+        { link: "all", title: "All" },
       ],
     },
     {
-      link: "#",
+      link: "/blog",
       title: "Blog",
+      subMenu: [
+        { link: "chairs", title: "Chairs" },
+        { link: "indoors", title: "Indoors" },
+        { link: "minimalism", title: "Minimalism" },
+        { link: "all", title: "All" },
+      ],
     },
     {
-      link: "#",
+      link: "/contact",
       title: "Contact",
     },
   ])
   const [isShowSubMenu] = useState(Array(menuList.length).fill(false))
-  const ToggleSubMenu = (e, index) => {
-    e.preventDefault()
-    isShowSubMenu.subMenu = index
-    isShowSubMenu.isShow = !isShowSubMenu.isShow
-    console.log(isShowSubMenu)
-  }
+  // const ToggleSubMenu = (e, index) => {
+  //   e.preventDefault()
+  //   isShowSubMenu.subMenu = index
+  //   isShowSubMenu.isShow = !isShowSubMenu.isShow
+  //   console.log(isShowSubMenu)
+  // }
+
   return (
     <ul>
       {menuList.map((item, index) => (
         <li key={index}>
-          <a
-            href={item.link}
+          <Link
+            to={{
+              pathname: item.link,
+            }}
             className={item.subMenu ? "relative block pb-6" : "block pb-6"}
-            onClick={(e) => ToggleSubMenu(e, index)}
+            // onClick={(e) => ToggleSubMenu(e, index)}
           >
             {item.title}
             {item.subMenu ? (
@@ -50,7 +60,7 @@ function Sidebar() {
             ) : (
               false
             )}
-          </a>
+          </Link>
           {item.subMenu ? (
             <ul
               className={
@@ -61,9 +71,16 @@ function Sidebar() {
             >
               {item.subMenu.map((subItem, subIndex) => (
                 <li key={subIndex}>
-                  <a href={subItem.link} className="block pb-6 px-4 hover:text-gray">
+                  <Link
+                    // to={`${item.link}/${subItem.link}`}
+                    to={{
+                      pathname: item.link,
+                      search: `?type=${subItem.link}`,
+                    }}
+                    className="block pb-6 px-4 hover:text-gray"
+                  >
                     {subItem.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
