@@ -75,7 +75,7 @@ function Header() {
             <FontAwesomeIcon icon="th" size="lg" />
           </a>
         </div>
-        <div className="absolute left-1/2 translateX-center">
+        {/* <div className="absolute left-1/2 translateX-center">
           <a href="">
             <img
               className="h-20 hidden md:block dark:hidden"
@@ -87,7 +87,7 @@ function Header() {
               src={`${process.env.PUBLIC_URL}/images/woolf-logo-lg-dark.svg`}
             ></img>
           </a>
-        </div>
+        </div> */}
         <section className="flex items-center">
           <a
             href="#"

@@ -64,3 +64,56 @@ body {
 .clamp-3 {
   -webkit-line-clamp: 3;
 }
+/* slider bar */
+section.range-slider {
+  @apply relative w-full text-center;
+}
+section.range-slider .range-line {
+  @apply inline-block absolute bg-black h-1;
+  z-index: 1;
+}
+section.range-slider input[type=range] {
+  @apply pointer-events-none absolute left-0 w-full h-1 border-0 rounded-2xl bg-gray-light outline-none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+input[type=range]::-webkit-slider-thumb {
+  @apply relative w-2 h-2 border-0 rounded-full bg-black outline-none appearance-none cursor-pointer;
+  z-index: 2;
+  pointer-events: all;
+  -webkit-appearance: none;
+}
+input[type=range]::-moz-range-thumb {
+  @apply relative w-2 h-2 border-0 rounded-full bg-black z-10;
+  pointer-events: all;
+  -moz-appearance: none;
+}
+
+/* input[type=range]::-ms-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+  -ms-appearance: none;
+  width: 300px;
+  height: 300px;
+  border-radius: 50px;
+  border: 0;
+  background-image: linear-gradient(to bottom, lighten(#413F41,60%) 0, #413F41 100%); 
+}
+
+input[type=range]::-moz-range-track {
+  position: relative;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 1);
+  border: 0;
+}
+
+input[type=range]:last-of-type::-moz-range-track {
+  -moz-appearance: none;
+  background: none transparent;
+  border: 0;
+} 
+
+input[type=range]::-moz-focus-outer {
+  border: 0;
+} */

@@ -2,32 +2,35 @@ import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import { useSelector } from "react-redux"
 import Sidebar from "../components/layout/Sidebar"
-import CardBlog from "../components/CardBlog"
+import BlogCard from "../components/blog/BlogCard"
 
 function Blog() {
   // url query
   const useQuery = () => new URLSearchParams(useLocation().search)
   const query = useQuery()
-  // date
-  const [date] = useState(useSelector((state) => state))
+  // data
+  const [blogList] = useState(useSelector((state) => state.blogDate))
 
   useEffect(() => {
-    console.log(date)
     console.log(query.get("type"))
   })
 
   return (
-    <section className="flex">
+    <section className="flex gap-x-4">
       <section className="hidden lg:block w-1/5">
         <Sidebar></Sidebar>
       </section>
       <section className="w-full lg:w-4/5 grid grid-cols-4 gap-x-4 gap-y-8">
-        <CardBlog date="2021-11-01" img="blog-chair.jpg"></CardBlog>
-        <CardBlog date="2021-11-02" img="blog-chair.jpg"></CardBlog>
-        <CardBlog date="2021-11-03" img="blog-chair.jpg"></CardBlog>
-        <CardBlog date="2021-11-04" img="blog-chair.jpg"></CardBlog>
-        <CardBlog date="2021-11-03" img="blog-chair.jpg"></CardBlog>
-        <CardBlog date="2021-11-04" img="blog-chair.jpg"></CardBlog>
+        {blogList.map((item, index) => (
+          <BlogCard
+            key={index}
+            title={item.title}
+            describe={item.describe}
+            date={item.date}
+            img={item.img}
+            tag={item.tag}
+          ></BlogCard>
+        ))}
       </section>
     </section>
   )
