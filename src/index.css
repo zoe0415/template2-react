@@ -22,8 +22,8 @@ body {
 /* 切換鈕 */
 .onoffswitch {
   @apply relative w-9;
-  -webkit-user-select:none; 
-  -moz-user-select:none; 
+  -webkit-user-select: none;
+  -moz-user-select: none;
   -ms-user-select: none;
 }
 .onoffswitch-checkbox {
@@ -34,12 +34,13 @@ body {
 }
 .onoffswitch-label:before {
   @apply absolute block w-5 bg-white top-0 bottom-0 right-4 border-2 border-gray-light rounded-3xl transition-all duration-200;
-  content: '';
+  content: "";
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label {
   @apply bg-deepOrange;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+.onoffswitch-checkbox:checked + .onoffswitch-label,
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
   @apply border-deepOrange;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
@@ -52,6 +53,9 @@ body {
 }
 .translateY-center {
   transform: translateY(-50%);
+}
+.translateX-center {
+  transform: translateX(-50%);
 }
 .clamp {
   @apply overflow-hidden overflow-ellipsis;
@@ -72,48 +76,85 @@ section.range-slider .range-line {
   @apply inline-block absolute bg-black h-1;
   z-index: 1;
 }
-section.range-slider input[type=range] {
+section.range-slider input[type="range"] {
   @apply pointer-events-none absolute left-0 w-full h-1 border-0 rounded-2xl bg-gray-light outline-none;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   @apply relative w-2 h-2 border-0 rounded-full bg-black outline-none appearance-none cursor-pointer;
   z-index: 2;
   pointer-events: all;
   -webkit-appearance: none;
 }
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   @apply relative w-2 h-2 border-0 rounded-full bg-black z-10;
   pointer-events: all;
   -moz-appearance: none;
 }
 
-/* input[type=range]::-ms-thumb {
-  pointer-events: all;
-  position: relative;
-  z-index: 10;
-  -ms-appearance: none;
-  width: 300px;
-  height: 300px;
-  border-radius: 50px;
-  border: 0;
-  background-image: linear-gradient(to bottom, lighten(#413F41,60%) 0, #413F41 100%); 
+/* checkbox */
+.checkbox-container {
+  @apply inline-flex items-center cursor-pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkbox-container input {
+  @apply opacity-0;
+}
+.checkbox-container .mark {
+  @apply inline-block relative w-5 h-5 mr-2 border border-deepOrange rounded-sm;
+}
+.checkbox-container input:checked ~ .mark {
+  @apply bg-deepOrange;
+}
+.checkbox-container input:checked ~ .mark:after {
+  @apply block;
+}
+.checkbox-container .mark:after {
+  @apply absolute top-0.5 left-1.5 hidden w-1.5 h-2.5 border-white border-r-2 border-b-2 transform rotate-45;
+  content: "";
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+
 }
 
-input[type=range]::-moz-range-track {
-  position: relative;
-  z-index: -1;
-  background-color: rgba(0, 0, 0, 1);
-  border: 0;
+/* radio */
+.radio-container {
+  @apply cursor-pointer;
 }
-
-input[type=range]:last-of-type::-moz-range-track {
-  -moz-appearance: none;
-  background: none transparent;
-  border: 0;
-} 
-
-input[type=range]::-moz-focus-outer {
-  border: 0;
+.radio-container .text {
+  @apply ml-4;
+}
+.radio-container input {
+  @apply hidden;
+}
+.radio-container .mark {
+  @apply relative inline-block w-5 h-5 rounded-full bg-white border border-deepOrange align-middle;
+  width: 22px;
+  height: 22px;
+}
+.radio-container input[type="radio"]:checked ~ .mark::after {
+  @apply absolute w-4 h-4 rounded-full bg-deepOrange;
+  content: "";
+  top: 2px;
+  left: 2px;
+}
+/* .radio-container input[type="radio"]::after {
+  @apply absolute w-2 h-2 rounded-full bg-white;
+  content: "";
+}
+.radio-container input[type="radio"]:checked::after {
+  @apply absolute w-2 h-2 rounded-full bg-deepOrange;
 } */
+
+/* scrollbar */
+.scroll-bar::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+.scroll-bar::-webkit-scrollbar-thumb {
+  @apply bg-gray-light rounded-3xl;
+}
+

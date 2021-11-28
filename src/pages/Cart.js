@@ -1,18 +1,21 @@
-import { useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { DeleteCartIem } from "../redux/actions"
 import Sidebar from "../components/layout/Sidebar"
 
 function Cart() {
+  const dispatch = useDispatch()
   const userCart = useSelector((state) => state.userCart)
+
   const deleteItem = (id) => {
-    console.log("delete::", userCart, id)
+    dispatch(DeleteCartIem(id))
   }
 
-  useEffect(() => {
-    console.log(userCart)
-  }, [userCart])
+  const updateItem = (id, num) => {
+    console.log(id, num)
+  }
+
   return (
     <section className="flex gap-x-16">
       <section className="hidden lg:block w-1/5">
@@ -76,6 +79,7 @@ function Cart() {
                       type="number"
                       value={item.num}
                       className="w-14 py-2.5 text-center border border-gray-light rounded-2xl outline-none"
+                      onChange={() => updateItem(item.id)}
                     ></input>
                   </div>
 
@@ -86,7 +90,7 @@ function Cart() {
                   <div className="col-span-1">
                     <button
                       className="transform hover:text-gray"
-                      onClick={deleteItem(item.id)}
+                      onClick={() => deleteItem(item.id)}
                     >
                       <FontAwesomeIcon icon="trash-alt" />
                     </button>
