@@ -23,14 +23,17 @@ function Sidebar() {
         <li key={index}>
           <Link
             to={item.subMenu ? "#" : { pathname: item.link }}
-            className={item.subMenu ? "relative block pb-6" : "block pb-6"}
+            className={
+              item.subMenu
+                ? "flex pb-6 items-center justify-between hover:text-gray"
+                : "block pb-6 hover:text-gray"
+            }
             onClick={item.subMenu ? (e) => ToggleSubMenu(e, index) : null}
           >
-            {item.title}
+            <span>{item.title}</span>
             {item.subMenu ? (
               <FontAwesomeIcon
                 icon={isShowSubMenu[index] ? "chevron-up" : "chevron-down"}
-                className="absolute top-1 right-8 cursor-pointer"
               />
             ) : (
               false

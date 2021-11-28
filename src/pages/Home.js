@@ -7,7 +7,7 @@ import Sidebar from "../components/layout/Sidebar"
 import Card1 from "../components/home/Card1"
 import Card2 from "../components/home/Card2"
 import Card3 from "../components/home/Card3"
-import Product from "../components/product/ProductCard"
+import ProductCard from "../components/product/ProductCard"
 import RightArrow from "../components/slider/RightArrow"
 import LeftArrow from "../components/slider/LeftArrow"
 
@@ -38,10 +38,10 @@ function Home() {
   const [card1] = useState(useSelector((state) => state.card1))
   const [card2] = useState(useSelector((state) => state.card2))
   const [card3] = useState(useSelector((state) => state.card3))
-  const [product] = useState(useSelector((state) => state.productDate))
+  const [product] = useState(useSelector((state) => state.product))
 
   return (
-    <section className="flex gap-x-4">
+    <section className="flex gap-x-16">
       <section className="hidden lg:block w-1/5">
         <Sidebar></Sidebar>
       </section>
@@ -77,12 +77,13 @@ function Home() {
         <Slider {...setting}>
           {product.map((item, index) => (
             <section key={index} className="pr-4">
-              <Product
+              <ProductCard
+                id={item.id}
                 name={item.name}
                 img={item.img}
                 price={item.price}
                 discount={item.discount}
-              ></Product>
+              ></ProductCard>
             </section>
           ))}
         </Slider>
