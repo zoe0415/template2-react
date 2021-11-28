@@ -1,25 +1,31 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { DeleteCartIem } from "../../redux/actions"
 
-function ProductCardSM() {
-  const [price] = useState(250)
-  const handleDeleteItem = () => {
-    console.log("delete")
+function ProductCardSM(props) {
+  const dispatch = useDispatch()
+
+  const handleDeleteItem = (id) => {
+    dispatch(DeleteCartIem(id))
   }
+
   return (
-    <section className="relative flex p-4 bg-gray-light rounded-2xl">
+    <section className="relative flex mb-4 p-4 bg-gray-light rounded-2xl">
       <FontAwesomeIcon
         icon="times"
         className="absolute top-2 left-2 text-red cursor-pointer transform hover:scale-110"
-        onClick={() => handleDeleteItem()}
+        onClick={() => handleDeleteItem(props.item.id)}
       ></FontAwesomeIcon>
       <section className="w-3/5 p-2">
         <Link to="#" className="inline-block mb-2 font-bold hover:text-gray">
-          商品名稱
+          {props.item.name}
         </Link>
         <div>
-          <span>2</span>×<span>${price}</span>
+          <span>{props.item.num}</span>×
+          <span>
+            ${props.item.discount ? props.item.discount : props.item.price}
+          </span>
         </div>
       </section>
       <section className="w-2/5">

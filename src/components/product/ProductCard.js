@@ -1,6 +1,14 @@
+import { useDispatch } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { AddCartIem } from "../../redux/actions"
 
 function ProductCard(props) {
+  const dispatch = useDispatch()
+
+  const addItem = ({ id, name, img, price, discount }) => {
+    dispatch(AddCartIem({ id, name, img, price, discount }))
+  }
+
   return (
     <section>
       <a href="" className="group">
@@ -37,7 +45,18 @@ function ProductCard(props) {
           $<span>{props.discount ? props.discount : props.price}</span>
         </p>
       </div>
-      <button className="w-full py-1.5 bg-yellow-light hover:bg-geyser rounded-2xl duration-200">
+      <button
+        className="w-full py-1.5 bg-yellow-light hover:bg-geyser rounded-2xl duration-200"
+        onClick={() =>
+          addItem({
+            id: props.id,
+            name: props.name,
+            img: props.img,
+            price: props.price,
+            discount: props.discount,
+          })
+        }
+      >
         <FontAwesomeIcon icon="plus" className="mr-2" />
         ADD
       </button>
