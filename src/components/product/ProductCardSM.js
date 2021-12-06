@@ -17,7 +17,7 @@ function ProductCardSM(props) {
         className="absolute top-2 left-2 text-red cursor-pointer transform hover:scale-110"
         onClick={() => handleDeleteItem(props.item.id)}
       ></FontAwesomeIcon>
-      <section className="w-3/5 p-2">
+      <section className="w-3/5 p-2 dark:text-black-text">
         <Link to="#" className="inline-block mb-2 font-bold hover:text-gray">
           {props.item.name}
         </Link>

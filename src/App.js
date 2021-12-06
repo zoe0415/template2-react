@@ -1,4 +1,5 @@
 import { Route, Switch, Redirect } from "react-router-dom"
+import { useSelector } from "react-redux"
 
 // fontawesome
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -57,11 +58,13 @@ import Register from "./pages/Register"
 import Login from "./pages/Login"
 
 function App() {
+  const isDark = useSelector((state) => state.darkMode)
+
   return (
-    <main>
+    <main className={isDark ? "dark" : ""}>
       <Header></Header>
       <TopBtn></TopBtn>
-      <section className="px-8 pt-28 pb-8">
+      <section className="px-8 py-28 dark:bg-black-light dark:text-white">
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/blog/:type?" component={Blog} />

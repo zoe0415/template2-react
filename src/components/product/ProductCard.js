@@ -46,7 +46,7 @@ function ProductCard(props) {
         </p>
       </div>
       <button
-        className="w-full py-1.5 bg-yellow-light hover:bg-geyser rounded-2xl duration-200"
+        className="w-full py-1.5 bg-yellow-light hover:bg-geyser dark:text-black-text rounded-2xl duration-200"
         onClick={() =>
           addItem({
             id: props.id,

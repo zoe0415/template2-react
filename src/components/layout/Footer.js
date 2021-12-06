@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function Footer() {
   return (
-    <footer className="mt-12 grid grid-cols-4 gap-x-12 p-8 bg-gray-light2">
+    <footer className="grid grid-cols-4 gap-x-12 p-8 bg-gray-light2 dark:bg-black-light2 dark:text-white">
       <section>
         <h5 className="mb-3 text-xl">Our Work is</h5>
         <div className="mb-6">

@@ -42,7 +42,7 @@ function Header() {
   }, [userCart])
 
   return (
-    <section className={isDark ? "dark" : ""}>
+    <section>
       <LeftDrawer
         isShowMenu={isShowLeftMenu}
         setIsShowMenu={setIsShowLeftMenu}
@@ -56,7 +56,7 @@ function Header() {
         setIsShowMenu={setIsShowRightMenu}
       ></RightDrawer>
 
-      <header className="fixed left-0 w-full py-4 px-8 md:p-8 flex items-center justify-between bg-white dark:bg-gray dark:text-white z-20">
+      <header className="fixed left-0 w-full py-4 px-8 md:p-8 flex items-center justify-between bg-white dark:bg-black-light dark:text-white z-20">
         <div className="flex items-center">
           <a href="">
             <img
@@ -77,7 +77,7 @@ function Header() {
             <FontAwesomeIcon icon="th" size="lg" />
           </a>
         </div>
-        {/* <div className="absolute left-1/2 translateX-center">
+        <div className="absolute left-1/2 translateX-center">
           <a href="">
             <img
               className="h-20 hidden md:block dark:hidden"
@@ -89,7 +89,7 @@ function Header() {
               src={`${process.env.PUBLIC_URL}/images/woolf-logo-lg-dark.svg`}
             ></img>
           </a>
-        </div> */}
+        </div>
         <section className="flex items-center">
           <Link
             to="/register"
