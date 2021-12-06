@@ -78,7 +78,7 @@ function Cart() {
                     <input
                       type="number"
                       value={item.num}
-                      className="w-14 py-2.5 text-center border border-gray-light rounded-2xl outline-none"
+                      className="w-14 py-2.5 text-center border border-gray-light rounded-2xl outline-none dark:text-black-text"
                       onChange={() => updateItem(item.id)}
                     ></input>
                   </div>
@@ -99,7 +99,7 @@ function Cart() {
               ))}
             </section>
 
-            <section className="mt-16 xl:mt-0 p-4 bg-gray-light rounded-2xl">
+            <section className="mt-16 xl:mt-0 p-4 bg-gray-light rounded-2xl dark:text-black-text">
               <h4 className="text-2xl font-semibold">You may be interested in…</h4>
               <section className="grid grid-cols-2">
                 <div className="row-span-2 bg-gray-light rounded-2xl">
