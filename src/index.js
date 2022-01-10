@@ -14,7 +14,7 @@ const store = createStore(rootReducer)
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <App />
       </Provider>
