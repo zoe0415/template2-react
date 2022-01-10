@@ -5,7 +5,7 @@ function BlogCard(props) {
     <section>
       {/* img */}
       <a href="#">
-        <img src={`/images/${props.img}`} className="rounded-2xl"></img>
+        <img src={`images/${props.img}`} className="rounded-2xl"></img>
       </a>
 
       {/* content */}

@@ -63,7 +63,7 @@ function Cart() {
                 >
                   <div className="col-span-3">
                     <img
-                      src="/images/product-chair1.jpg"
+                      src="images/product-chair1.jpg"
                       className="w-1/2 rounded-2xl"
                     ></img>
                   </div>
