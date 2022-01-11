@@ -78,7 +78,7 @@ function Header() {
           </a>
         </div>
         <div className="absolute left-1/2 translateX-center">
-          <a href="">
+          <a href="./">
             <img
               className="h-20 hidden md:block dark:hidden"
               src={`${process.env.PUBLIC_URL}/images/woolf-logo-lg.svg`}

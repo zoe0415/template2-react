@@ -1,18 +1,18 @@
 const initialState = [
   {
-    title: "111",
+    title: "商品A",
     img: "card1-1.jpeg",
   },
   {
-    title: "222",
+    title: "商品B",
     img: "card1-1.jpeg",
   },
   {
-    title: "333",
+    title: "商品C",
     img: "card1-1.jpeg",
   },
   {
-    title: "444",
+    title: "商品D",
     img: "card1-1.jpeg",
   },
 ]

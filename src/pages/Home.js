@@ -46,33 +46,39 @@ function Home() {
         <Sidebar></Sidebar>
       </section>
       <section className="w-full lg:w-4/5">
-        <Slider {...setting}>
-          {card1.map((item, index) => (
-            <section key={index} className="pr-4">
-              <Card1 title={item.title} img={item.img}></Card1>
-            </section>
-          ))}
-        </Slider>
+        <section className="mb-6">
+          <Slider {...setting}>
+            {card1.map((item, index) => (
+              <section key={index} className="pr-4">
+                <Card1 title={item.title} img={item.img}></Card1>
+              </section>
+            ))}
+          </Slider>
+        </section>
 
-        <Slider {...setting}>
-          {card2.map((item, index) => (
-            <section key={index} className="pr-4">
-              <Card2
-                title={item.title}
-                bgColor={item.bgColor}
-                num={item.num}
-              ></Card2>
-            </section>
-          ))}
-        </Slider>
+        <section className="mb-6">
+          <Slider {...setting}>
+            {card2.map((item, index) => (
+              <section key={index} className="pr-4">
+                <Card2
+                  title={item.title}
+                  bgColor={item.bgColor}
+                  num={item.num}
+                ></Card2>
+              </section>
+            ))}
+          </Slider>
+        </section>
 
-        <Slider {...setting}>
-          {card3.map((item, index) => (
-            <section key={index} className="pr-4">
-              <Card3 title={item.title} img={item.img}></Card3>
-            </section>
-          ))}
-        </Slider>
+        <section className="mb-6">
+          <Slider {...setting}>
+            {card3.map((item, index) => (
+              <section key={index} className="pr-4">
+                <Card3 title={item.title} img={item.img}></Card3>
+              </section>
+            ))}
+          </Slider>
+        </section>
 
         <Slider {...setting}>
           {product.map((item, index) => (
