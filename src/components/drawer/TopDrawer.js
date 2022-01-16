@@ -16,6 +16,7 @@ function TopDrawer(props) {
       />
       <div>
         <input
+          size="23"
           placeholder="What are you looking for?"
           className="block p-4 text-center text-2xl outline-none"
         ></input>

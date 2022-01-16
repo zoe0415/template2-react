@@ -50,13 +50,13 @@ function SidebarProduct() {
             {userCart.map((item, index) => (
               <ProductSM key={index} item={item}></ProductSM>
             ))}
-            <div>
-              <p>Subtotal:</p>${userCartTotalPrice}
+            <div className="mb-4">
+              Subtotal : <strong className="ml-1">${userCartTotalPrice}</strong>
             </div>
-            <div>
+            <div className="flex justify-end">
               <Link
-                to="#"
-                className="inline-block py-1.5 px-3 bg-black text-white rounded-2xl"
+                to="/cart"
+                className="inline-block mr-4 py-1.5 px-3 bg-black text-white rounded-2xl"
               >
                 View cart
               </Link>
@@ -72,40 +72,43 @@ function SidebarProduct() {
       </section>
 
       {/* fliter */}
-      <section className="mt-8">
+      <section className="mt-12">
         <h5 className="text-xl font-semibold">Filter by price</h5>
-        <section className="my-4">
-          <section className="range-slider">
-            <span className="range-line" style={rangeLine}></span>
-            <input
-              value={price}
-              min="0"
-              max="1000"
-              step="10"
-              type="range"
-              onChange={(e) => handleChangePrice(e)}
-            />
-            <input
-              value={priceTwo}
-              min="0"
-              max="1000"
-              step="10"
-              type="range"
-              onChange={(e) => handleChangePriceTwo(e)}
-            />
-          </section>
+        {/* <section className="my-4">
+
+        </section> */}
+        <section className="my-4 h-1 range-slider">
+          <span className="range-line" style={rangeLine}></span>
+          <input
+            value={price}
+            min="0"
+            max="1000"
+            step="10"
+            type="range"
+            onChange={(e) => handleChangePrice(e)}
+          />
+          <input
+            value={priceTwo}
+            min="0"
+            max="1000"
+            step="10"
+            type="range"
+            onChange={(e) => handleChangePriceTwo(e)}
+          />
         </section>
-        <button className="inline-block py-1.5 px-3 bg-black text-white rounded-2xl">
-          Filter
-        </button>
-        <p>
-          Price: ${price < priceTwo ? price : priceTwo} - $
-          {price < priceTwo ? priceTwo : price}
-        </p>
+        <section className="flex justify-between items-center">
+          <p>
+            Price: ${price < priceTwo ? price : priceTwo} - $
+            {price < priceTwo ? priceTwo : price}
+          </p>
+          <button className="inline-block py-1.5 px-3 bg-black text-white rounded-2xl">
+            Filter
+          </button>
+        </section>
       </section>
 
       {/* Product categories */}
-      <section className="mt-8">
+      <section className="mt-12">
         <h5 className="mb-2 text-xl font-semibold">Product categories</h5>
         {categoriesMenuList.map((item, index) => (
           <Link

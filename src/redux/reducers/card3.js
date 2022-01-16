@@ -16,11 +16,11 @@ const initialState = [
     img: "card3-vases.jpg",
   },
   {
-    title: "Lamps11",
+    title: "Lamps1",
     img: "card3-lamps.jpg",
   },
   {
-    title: "Lamps22",
+    title: "Lamps2",
     img: "card3-lamps.jpg",
   },
 ]
